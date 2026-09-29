@@ -50,7 +50,7 @@ function App() {
       <Routes>
         <Route path='/:divisionSlug' element={<DivisionPage />}/>
         <Route path='/category/:categorySlug' element={<CategoryPage />} />
-        <Route path='/:categorySlug/:entityTitle' element={<EntityPage />} />
+        <Route path='/tickets/:entityTitle' element={<EntityPage />} />
       </Routes>
     </main>
     </BrowserRouter>
