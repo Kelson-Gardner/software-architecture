@@ -1,15 +1,25 @@
 import { NavBarItem, type NavBarItemProps } from "./NavBarItem";
 
-interface NavBarProps {
+export interface NavBarProps {
     navBarItems: NavBarItemProps[]
 };
 
-function NavBar(props: NavBarProps) {
+export function NavBar(props: NavBarProps) {
     return(
-    <>
-        {props.navBarItems.map((item, index) => <NavBarItem key={index} {...item} />)}
-    </>
+        <nav className="nav-bar" aria-label="Primary navigation">
+            <a className="nav-bar-brand" href="/" aria-label="Tix home">
+                <span className="nav-bar-brand-text">Tix.</span>
+            </a>
+
+            <ul className="nav-bar-list">
+                {props.navBarItems.map((item) => (
+                    <NavBarItem key={item.href} {...item} />
+                ))}
+            </ul>
+
+            <a className="nav-bar-action" href="/contact">
+                Join
+            </a>
+        </nav>
     );
 };
-
-export default NavBar;

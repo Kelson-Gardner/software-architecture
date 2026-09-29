@@ -9,5 +9,25 @@ export interface NavBarItemProps {
 }
 
 export function NavBarItem(props: NavBarItemProps) {
-    return <NavLink to={props.href}>{ props.title }</NavLink>
+    if (props.enabled === false) {
+        return (
+            <li className="nav-bar-list-item">
+                <span className="nav-bar-item is-disabled" aria-disabled="true">
+                    {props.title}
+                </span>
+            </li>
+        );
+    }
+
+    return (
+        <li className="nav-bar-list-item">
+            <NavLink
+                className={({ isActive }) => `nav-bar-item${isActive ? ' is-active' : ''}`}
+                to={props.href}
+                end={props.href === "/"}
+            >
+                {props.title}
+            </NavLink>
+        </li>
+    );
 };
