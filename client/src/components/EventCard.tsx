@@ -5,14 +5,46 @@ export interface EventCardProps {
     href: string,
     date: Date,
     location: string,
-    starting_price?: number,
+    startingPrice?: number,
     image_url?: string,
 }
 
 export function EventCard(props: EventCardProps) {
+    const eventDate = new Intl.DateTimeFormat('en-US', {
+        month: 'short',
+        day: 'numeric',
+        weekday: 'short',
+    }).format(props.date);
+
+    const eventTime = new Intl.DateTimeFormat('en-US', {
+        hour: 'numeric',
+        minute: '2-digit',
+    }).format(props.date);
+
     return (
-        <span>
-            <NavLink to={props.href}>{props.title}</NavLink>
-        </span>
+        <article className='event-card'>
+            <NavLink className='event-card-link' to={props.href}>
+                <time className='event-card-date' dateTime={props.date.toISOString()}>
+                    <span>{eventDate}</span>
+                    <span>{eventTime}</span>
+                </time>
+
+                <span className='event-card-main'>
+                    <span className='event-card-title'>{props.title}</span>
+                    <span className='event-card-location'>{props.location}</span>
+                </span>
+
+                <span className='event-card-price'>
+                    {props.startingPrice ? (
+                        <>
+                            <span>From</span>
+                            <strong>${props.startingPrice}</strong>
+                        </>
+                    ) : (
+                        <span>See tickets</span>
+                    )}
+                </span>
+            </NavLink>
+        </article>
     );
 }
