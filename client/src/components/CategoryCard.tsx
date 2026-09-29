@@ -8,8 +8,11 @@ export interface CategoryCardProps {
 
 export function CategoryCard(props: CategoryCardProps) {
     return (
-        <span>
-            <NavLink to={props.href}>{props.title}</NavLink>
-        </span>
+        <article className='category-card'>
+            <NavLink className='category-card-link' to={props.href}>
+                <span className='category-card-title'>{props.title}</span>
+                <span className='category-card-action'>Browse</span>
+            </NavLink>
+        </article>
     );
 }
