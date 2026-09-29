@@ -1,0 +1,118 @@
+.division-page {
+  width: min(100%, 1180px);
+  margin: 0 auto;
+  padding: clamp(42px, 7vw, 84px) clamp(18px, 4vw, 56px);
+  text-align: left;
+  box-sizing: border-box;
+}
+
+.division-page-header {
+  padding-bottom: 28px;
+  border-bottom: 1px solid var(--border);
+}
+
+.division-page-eyebrow,
+.category-card-action {
+  color: var(--text-subtle);
+  font-size: 0.72rem;
+  font-weight: 750;
+  letter-spacing: 0.16em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.division-page-eyebrow {
+  margin-bottom: 10px;
+}
+
+.division-page h1 {
+  max-width: 760px;
+  margin: 0;
+  color: var(--text-strong);
+  font-size: clamp(2.5rem, 6vw, 5.6rem);
+  font-weight: 800;
+  line-height: 0.95;
+  letter-spacing: 0;
+}
+
+.category-cards-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  border-bottom: 1px solid var(--border);
+}
+
+.category-card {
+  border-top: 1px solid var(--border);
+}
+
+.category-card-link {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: clamp(18px, 4vw, 56px);
+  align-items: center;
+  min-height: clamp(116px, 15vw, 172px);
+  padding: 22px 0;
+  color: var(--text-strong);
+  text-decoration: none;
+  transition:
+    background-color 180ms ease,
+    padding-inline 180ms ease;
+}
+
+.category-card-link:hover,
+.category-card-link:focus-visible {
+  background: var(--surface-raised);
+  padding-inline: 18px;
+}
+
+.category-card-link:focus-visible {
+  outline: 1px solid var(--text-strong);
+  outline-offset: -6px;
+}
+
+.category-card-title {
+  color: var(--text-strong);
+  font-size: clamp(2.5rem, 8vw, 7.5rem);
+  font-weight: 800;
+  line-height: 0.9;
+  letter-spacing: 0;
+}
+
+.category-card-action {
+  width: fit-content;
+  color: var(--text-muted);
+  border-bottom: 1px solid transparent;
+}
+
+.category-card-link:hover .category-card-action,
+.category-card-link:focus-visible .category-card-action {
+  color: var(--text-strong);
+  border-bottom-color: currentColor;
+}
+
+@media (max-width: 760px) {
+  .division-page {
+    padding-block: 34px 54px;
+  }
+
+  .division-page-header {
+    padding-bottom: 24px;
+  }
+
+  .category-card-link {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    min-height: 148px;
+    padding: 24px 0;
+  }
+
+  .category-card-link:hover,
+  .category-card-link:focus-visible {
+    padding-inline: 14px;
+  }
+
+  .category-card-action {
+    justify-self: start;
+  }
+}
