@@ -7,7 +7,7 @@ export interface NavBarProps {
 export function NavBar(props: NavBarProps) {
     return(
         <nav className="nav-bar" aria-label="Primary navigation">
-            <a className="nav-bar-brand" href="/" aria-label="Tix home">
+            <a className="nav-bar-brand" href="/" aria-label="System Architecture home">
                 <span className="nav-bar-brand-text">Tix.</span>
             </a>
 
@@ -18,7 +18,7 @@ export function NavBar(props: NavBarProps) {
             </ul>
 
             <a className="nav-bar-action" href="/contact">
-                Join
+                Get Started
             </a>
         </nav>
     );
