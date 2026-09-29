@@ -79,8 +79,7 @@
   border-bottom-color: currentColor;
 }
 
-.nav-bar-list-item:hover .nav-bar-drop-down-items-wrapper
-.nav-bar-list-item:focus-within .nav-bar-drop-down-items-wrapper {
+.nav-bar-list-item:hover .nav-bar-drop-down-items-wrapper {
   display: block;
 }
 
@@ -221,15 +220,11 @@
   .nav-bar-list {
     order: 3;
     flex: 1 1 100%;
+    flex-wrap: wrap;
     justify-content: flex-start;
     gap: 22px;
-    overflow-x: auto;
+    overflow: visible;
     padding: 2px 0 4px;
-    scrollbar-width: none;
-  }
-
-  .nav-bar-list::-webkit-scrollbar {
-    display: none;
   }
 
   .nav-bar-item {

@@ -2,37 +2,40 @@ import './App.css'
 import './components/NavBar/NavBar.css'
 import { NavBar } from './components/NavBar/NavBar';
 import { type NavBarItemProps } from './components/NavBar/NavBarItem'
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import CategoryPage from './pages/CategoryPage';
+import EntityPage from './pages/EntityPage';
+import DivisionPage from './pages/DivisionPage';
 
 const navBarItems: NavBarItemProps[] = [
   { 
     title: "Sports", 
     href: "/sports",
     dropDownItems: [
-      {title: 'NBA', href: '/events/nba'},
-      {title: 'NFL', href: '/events/nfl'},
-      {title: 'MLB', href: '/events/mlb'},
-      {title: 'UFC', href: '/events/ufc'},
+      {title: 'NBA', href: '/category/nba'},
+      {title: 'NFL', href: '/category/nfl'},
+      {title: 'MLB', href: '/category/mlb'},
+      {title: 'UFC', href: '/category/ufc'},
     ]
    },
   { 
     title: "Concerts",
     href: "/concerts",
     dropDownItems: [
-      {title: 'Country', href: '/events/country'},
-      {title: 'Pop', href: '/events/pop'},
-      {title: 'Rap', href: '/events/rap'},
-      {title: 'Rock', href: '/events/rock'},
+      {title: 'Country', href: '/category/country'},
+      {title: 'Pop', href: '/category/pop'},
+      {title: 'Rap', href: '/category/rap'},
+      {title: 'Rock', href: '/category/rock'},
     ] 
   },
   { 
     title: "Shows",
     href: "/shows",
     dropDownItems: [
-      {title: 'Comedy', href: '/events/comedy'},
-      {title: 'Magic', href: '/events/magic'},
-      {title: 'Theatre', href: '/events/theatre'},
-      {title: 'Interviews', href: '/events/interviews'},
+      {title: 'Comedy', href: '/category/comedy'},
+      {title: 'Magic', href: '/category/magic'},
+      {title: 'Theatre', href: '/category/theatre'},
+      {title: 'Interviews', href: '/category/interviews'},
     ]
    },
 ];
@@ -43,6 +46,13 @@ function App() {
       <header id='nav-bar-wrapper'>
         <NavBar navBarItems={navBarItems} />
       </header>
+    <main>
+      <Routes>
+        <Route path='/:divisionSlug' element={<DivisionPage />}/>
+        <Route path='/category/:categorySlug' element={<CategoryPage />} />
+        <Route path='/:categorySlug/:entityTitle' element={<EntityPage />} />
+      </Routes>
+    </main>
     </BrowserRouter>
   )
 }
