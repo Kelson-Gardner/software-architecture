@@ -79,7 +79,8 @@
   border-bottom-color: currentColor;
 }
 
-.nav-bar-list-item:hover .nav-bar-drop-down-items-wrapper {
+.nav-bar-list-item:hover .nav-bar-drop-down-items-wrapper
+.nav-bar-list-item:focus-within .nav-bar-drop-down-items-wrapper {
   display: block;
 }
 

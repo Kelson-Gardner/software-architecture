@@ -9,30 +9,30 @@ const navBarItems: NavBarItemProps[] = [
     title: "Sports", 
     href: "/sports",
     dropDownItems: [
-      {title: 'NBA', link: '/events/nba'},
-      {title: 'NFL', link: '/events/nfl'},
-      {title: 'MBL', link: '/events/mlb'},
-      {title: 'UFC', link: '/events/ufc'},
+      {title: 'NBA', href: '/events/nba'},
+      {title: 'NFL', href: '/events/nfl'},
+      {title: 'MLB', href: '/events/mlb'},
+      {title: 'UFC', href: '/events/ufc'},
     ]
    },
   { 
     title: "Concerts",
     href: "/concerts",
     dropDownItems: [
-      {title: 'Country', link: '/events/country'},
-      {title: 'Pop', link: '/events/pop'},
-      {title: 'Rap', link: '/events/rap'},
-      {title: 'Rock', link: '/events/rock'},
+      {title: 'Country', href: '/events/country'},
+      {title: 'Pop', href: '/events/pop'},
+      {title: 'Rap', href: '/events/rap'},
+      {title: 'Rock', href: '/events/rock'},
     ] 
   },
   { 
     title: "Shows",
     href: "/shows",
     dropDownItems: [
-      {title: 'Comedy', link: '/events/comedy'},
-      {title: 'Magic', link: '/events/magic'},
-      {title: 'Theatre', link: '/events/theatre'},
-      {title: 'Interviews', link: '/events/interviews'},
+      {title: 'Comedy', href: '/events/comedy'},
+      {title: 'Magic', href: '/events/magic'},
+      {title: 'Theatre', href: '/events/theatre'},
+      {title: 'Interviews', href: '/events/interviews'},
     ]
    },
 ];

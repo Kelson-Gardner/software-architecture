@@ -27,8 +27,8 @@ export function NavBarItem(props: NavBarItemProps) {
             {
             Boolean(props.dropDownItems?.length) &&
                 <ul className='nav-bar-drop-down-items-wrapper'>
-                    {props.dropDownItems?.map((dropDownItem, index) => (
-                        <NavBarDropDownItem title={dropDownItem.title} link={dropDownItem.link} key={index}/>
+                    {props.dropDownItems?.map((dropDownItem) => (
+                        <NavBarDropDownItem title={dropDownItem.title} href={dropDownItem.href} key={dropDownItem.href}/>
                     ))}
                 </ul>
             }
