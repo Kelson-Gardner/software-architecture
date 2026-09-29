@@ -24,11 +24,14 @@ export function NavBarItem(props: NavBarItemProps) {
             >
                 {props.title}
             </NavLink>
-            <ul className='nav-bar-drop-down-items-wrapper'>
-                {props.dropDownItems?.map((dropDownItem, index) => (
-                    <NavBarDropDownItem title={dropDownItem.title} link={dropDownItem.link} key={index}/>
-                ))}
-            </ul>
+            {
+            Boolean(props.dropDownItems?.length) &&
+                <ul className='nav-bar-drop-down-items-wrapper'>
+                    {props.dropDownItems?.map((dropDownItem, index) => (
+                        <NavBarDropDownItem title={dropDownItem.title} link={dropDownItem.link} key={index}/>
+                    ))}
+                </ul>
+            }
         </li>
     );
 };
