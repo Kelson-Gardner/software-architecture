@@ -6,6 +6,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import CategoryPage from './pages/CategoryPage';
 import EntityPage from './pages/EntityPage';
 import DivisionPage from './pages/DivisionPage';
+import EventPage from './pages/EventPage';
 
 const navBarItems: NavBarItemProps[] = [
   { 
@@ -50,7 +51,8 @@ function App() {
       <Routes>
         <Route path='/:divisionSlug' element={<DivisionPage />}/>
         <Route path='/category/:categorySlug' element={<CategoryPage />} />
-        <Route path='/tickets/:entityTitle' element={<EntityPage />} />
+        <Route path='/events/:entityTitle' element={<EntityPage />} />
+        <Route path='/tickets/:eventId' element={<EventPage />} />
       </Routes>
     </main>
     </BrowserRouter>
