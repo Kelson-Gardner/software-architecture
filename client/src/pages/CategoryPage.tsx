@@ -4,12 +4,12 @@ import './CategoryPage.css';
 
 // Dummy data for now
 const entityCards: EntityCardProps[] = [
-    {title: 'Utah Jazz', href: '/tickets/utah-jazz'},
-    {title: 'Boston Celtics', href: '/tickets/boston-celtics'},
-    {title: 'Los Angeles Lakers', href: '/tickets/los-angeles-lakers'},
-    {title: 'John Mayer', href: '/tickets/john-mayer'},
-    {title: 'Blink-182', href: '/tickets/blink-182'},
-    {title: 'Shane Gillis', href: '/tickets/shane-gillis'},
+    {title: 'Utah Jazz', href: '/events/utah-jazz'},
+    {title: 'Boston Celtics', href: '/events/boston-celtics'},
+    {title: 'Los Angeles Lakers', href: '/events/los-angeles-lakers'},
+    {title: 'John Mayer', href: '/events/john-mayer'},
+    {title: 'Blink-182', href: '/events/blink-182'},
+    {title: 'Shane Gillis', href: '/events/shane-gillis'},
 ]
 
 // Category will be a type such as MLB, NBA, Country, Theatre, etc.
