@@ -9,6 +9,21 @@ export interface TicketCardProps {
 
 export function TicketCard(props: TicketCardProps) {
     return (
-        <div>{props.title} ${props.price} {props.quantity}</div>
+        <article className='ticket-card'>
+            <button className='ticket-card-button' type='button'>
+                <span className='ticket-card-main'>
+                    <span className='ticket-card-title'>{props.title}</span>
+                    <span className='ticket-card-details'>
+                        <span>{props.quantity} {props.quantity === 1 ? 'ticket' : 'tickets'}</span>
+                        {props.seatLabel && <span>{props.seatLabel}</span>}
+                    </span>
+                </span>
+
+                <span className='ticket-card-price'>
+                    <span>Each</span>
+                    <strong>${props.price}</strong>
+                </span>
+            </button>
+        </article>
     );
 }
