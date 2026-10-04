@@ -5,13 +5,10 @@ export interface TicketCardProps {
     // Probably need to think of a better name. 
     // This will be the row and potentially seat number? Optional because of general admission?
     seatLabel?: string,
+    onSelect?: () => void
 }
 
-interface TicketCardComponentProps extends TicketCardProps {
-    onSelect: () => void,
-}
-
-export function TicketCard(props: TicketCardComponentProps) {
+export function TicketCard(props: TicketCardProps) {
     return (
         <article className='ticket-card'>
             <button className='ticket-card-button' type='button' onClick={props.onSelect}>
