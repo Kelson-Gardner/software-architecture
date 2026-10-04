@@ -7,10 +7,14 @@ export interface TicketCardProps {
     seatLabel?: string,
 }
 
-export function TicketCard(props: TicketCardProps) {
+interface TicketCardComponentProps extends TicketCardProps {
+    onSelect: () => void,
+}
+
+export function TicketCard(props: TicketCardComponentProps) {
     return (
         <article className='ticket-card'>
-            <button className='ticket-card-button' type='button'>
+            <button className='ticket-card-button' type='button' onClick={props.onSelect}>
                 <span className='ticket-card-main'>
                     <span className='ticket-card-title'>{props.title}</span>
                     <span className='ticket-card-details'>

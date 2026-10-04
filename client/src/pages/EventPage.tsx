@@ -1,3 +1,5 @@
+import { useState } from "react";
+import CheckoutModal from "../components/CheckoutModal";
 import { TicketCard, type TicketCardProps } from "../components/TicketCard";
 import './EventPage.css';
 
@@ -12,6 +14,7 @@ const ticketCards: TicketCardProps[] = [
 ];
 
 function EventPage(){
+    const [selectedTicket, setSelectedTicket] = useState<TicketCardProps | null>(null);
     const formattedDate = new Intl.DateTimeFormat('en-US', {
         weekday: 'long',
         month: 'long',
@@ -43,11 +46,12 @@ function EventPage(){
                 <ul className='ticket-cards-list'>
                     {sortedTicketCards.map((ticketCard) => (
                         <li key={`${ticketCard.title}-${ticketCard.seatLabel ?? 'general'}-${ticketCard.price}`}>
-                            <TicketCard {...ticketCard} />
+                            <TicketCard {...ticketCard} onSelect={() => setSelectedTicket(ticketCard)} />
                         </li>
                     ))}
                 </ul>
             </section>
+            <CheckoutModal isOpen={selectedTicket !== null} ticket={selectedTicket} onClose={() => setSelectedTicket(null)}/>
         </section>
     );
 }
